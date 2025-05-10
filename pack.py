@@ -30,8 +30,6 @@ installer_name_pattern = {
     'es': 'LK-Español-Localización-$game_version$-$l10n_version$.exe'
 }
 
-shared_files_path = Path('Shared')
-
 def should_skip(path: Path, patterns: List[str]) -> bool:
     for pat in patterns:
         if fnmatch.fnmatch(path.name, pat) or fnmatch.fnmatch(str(path.relative_to(Path('.'))), pat):
@@ -43,14 +41,13 @@ def _collect_lang(lang_name: str, l10n_path: Path, ee_path: Path, locale_config_
     base_target_path = Path('Localizations').joinpath(lang_name)
     shutil.rmtree(base_target_path)
     os.makedirs(base_target_path, exist_ok=True)
-    os.makedirs(base_target_path.joinpath('res_mods').joinpath('texts').joinpath('ru').joinpath('LC_MESSAGES'), exist_ok=True)
+    os.makedirs(base_target_path.joinpath('texts').joinpath('ru').joinpath('LC_MESSAGES'), exist_ok=True)
     os.makedirs(base_target_path.joinpath('bin64'), exist_ok=True)
     for file in os.listdir(l10n_path):
         if 'version.info' in file or 'global.mo' in file:
-            shutil.copy(l10n_path.joinpath(file), base_target_path.joinpath('res_mods').joinpath('texts').joinpath('ru').joinpath('LC_MESSAGES').joinpath(file))
-    shutil.copytree(ee_path, base_target_path.joinpath('res_mods'), dirs_exist_ok=True)
-    shutil.copy(locale_config_path, base_target_path.joinpath('res_mods').joinpath('locale_config.xml'))
-    shutil.copytree(shared_files_path, base_target_path.joinpath('bin64'), dirs_exist_ok=True)
+            shutil.copy(l10n_path.joinpath(file), base_target_path.joinpath('texts').joinpath('ru').joinpath('LC_MESSAGES').joinpath(file))
+    shutil.copytree(ee_path, base_target_path, dirs_exist_ok=True)
+    shutil.copy(locale_config_path, base_target_path.joinpath('locale_config.xml'))
 
 def collect_lang(lang_name: str, base_path: Path):
     _collect_lang(
@@ -61,7 +58,7 @@ def collect_lang(lang_name: str, base_path: Path):
     )
 
 def zip_lang(lang_name: str, zip_type: str) -> str:
-    lang_path = Path('Localizations').joinpath(lang_name).joinpath('res_mods')
+    lang_path = Path('Localizations').joinpath(lang_name)
     version_path = lang_path.joinpath('texts').joinpath('ru').joinpath('LC_MESSAGES').joinpath('version.info')
     with open(version_path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
@@ -93,7 +90,7 @@ def zip_lang(lang_name: str, zip_type: str) -> str:
 
 def pack_lang(lang_name: str) -> bool:
     lang_path = Path('Localizations').joinpath(lang_name)
-    version_path = lang_path.joinpath('res_mods').joinpath('texts').joinpath('ru').joinpath('LC_MESSAGES').joinpath('version.info')
+    version_path = lang_path.joinpath('texts').joinpath('ru').joinpath('LC_MESSAGES').joinpath('version.info')
 
     with open(version_path, 'r', encoding='utf-8') as f:
         lines = f.readlines()

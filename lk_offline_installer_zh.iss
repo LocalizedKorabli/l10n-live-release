@@ -24,8 +24,8 @@ Uninstallable=no
 SetupIconFile=assets\logo.ico
 
 [Files]
-Source: "Localizations\zh\*"; DestDir: "{tmp}\mods"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "SrcHelios\*"; DestDir: "{tmp}\mods"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "Localizations\zh\*"; DestDir: "{tmp}\mods\res_mods"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "Shared\*"; DestDir: "{tmp}\mods"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Languages]
 Name: "chinesesimplified"; MessagesFile: "InstallerL10n\ChineseSimplified.isl"; InfoBeforeFile: "assets\welcome_chs.txt"; LicenseFile: "assets\license_chs.txt";

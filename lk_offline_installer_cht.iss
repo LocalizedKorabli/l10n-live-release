@@ -24,8 +24,8 @@ Uninstallable=no
 SetupIconFile=assets\logo.ico
 
 [Files]
-Source: "Localizations\cht\*"; DestDir: "{tmp}\mods"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "SrcHelios\*"; DestDir: "{tmp}\mods"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "Localizations\cht\*"; DestDir: "{tmp}\mods\res_mods"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "Shared\*"; DestDir: "{tmp}\mods"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Languages]
 Name: "chinesetraditional"; MessagesFile: "InstallerL10n\ChineseTraditional.isl"; InfoBeforeFile: "assets\welcome_cht.txt"; LicenseFile: "assets\license_cht.txt";

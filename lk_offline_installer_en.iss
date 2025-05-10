@@ -24,8 +24,8 @@ Uninstallable=no
 SetupIconFile=assets\logo.ico
 
 [Files]
-Source: "Localizations\en\*"; DestDir: "{tmp}\mods"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "SrcHelios\*"; DestDir: "{tmp}\mods"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "Localizations\en\*"; DestDir: "{tmp}\mods\res_mods"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "Shared\*"; DestDir: "{tmp}\mods"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"; InfoBeforeFile: "assets\welcome_en.txt"; LicenseFile: "assets\license_en.txt";
