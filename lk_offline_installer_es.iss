@@ -1,5 +1,5 @@
-#define MyAppInstallerName "LKEnglishL10nPack"
-#define MyAppNameDefault "LK English Localization Offline Pack"
+#define MyAppInstallerName "LKEspañolL10nPack"
+#define MyAppNameDefault "LK Español Localización Paquete Offline"
 #define MyAppVersion "1.0.0"
 #define MyAppPublisher "LocalizedKorabli"
 #define MyAppPublisherURL "https://github.com/LocalizedKorabli"
@@ -7,7 +7,7 @@
 
 [Setup]
 AppName={cm:MyAppName}
-AppVersion=25.6.8812776.2
+AppVersion=25.5.8809839.1
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppPublisherURL}
 AppSupportURL={#MyAppSupportURL}
@@ -28,21 +28,19 @@ VersionInfoDescription={#MyAppNameDefault}
 VersionInfoProductName={#MyAppNameDefault}
 
 [Files]
-Source: "Localizations\en\*"; DestDir: "{tmp}\mods\res_mods"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "Localizations\es\*"; DestDir: "{tmp}\mods\res_mods"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "Shared\bin64"; DestDir: "{tmp}\mods\bin64"; Flags: ignoreversion recursesubdirs createallsubdirs
-// English localization does not really need SrcHelios
+// Spanish localization does not really need SrcHelios
 // Source: "Shared\*"; DestDir: "{tmp}\mods\"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Languages]
-Name: "english"; MessagesFile: "compiler:Default.isl"; InfoBeforeFile: "assets\welcome_en.txt"; LicenseFile: "assets\license_en.txt";
-Name: "chinesesimplified"; MessagesFile: "InstallerL10n\ChineseSimplified.isl"; InfoBeforeFile: "assets\welcome_en_chs.txt"; LicenseFile: "assets\license_en.txt";
-Name: "chinesetraditional"; MessagesFile: "InstallerL10n\ChineseTraditional.isl"; InfoBeforeFile: "assets\welcome_en_cht.txt"; LicenseFile: "assets\license_en.txt";
+Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"; InfoBeforeFile: "assets\welcome_es.txt"; LicenseFile: "assets\license_es.txt";
+Name: "english"; MessagesFile: "compiler:Default.isl"; InfoBeforeFile: "assets\welcome_es_en.txt"; LicenseFile: "assets\license_es.txt";
 //Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"; InfoBeforeFile: "assets\welcome_ru.txt"; LicenseFile: "assets\license_ru.txt";
 
 [CustomMessages]
-english.MyAppName=LK English Localization Offline Pack
-chinesesimplified.MyAppName=澪刻英文本地化离线包
-chinesetraditional.MyAppName=澪刻英語在地化離綫包
+spanish.MyAppName=LK Español Localización Paquete Offline
+english.MyAppName=LK Español Localization Offline Pack
 
 [Code]
 function GetInstallRootFromRegistry(): String;

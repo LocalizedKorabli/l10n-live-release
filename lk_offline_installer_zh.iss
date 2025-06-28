@@ -7,7 +7,7 @@
 
 [Setup]
 AppName={#MyAppName}
-AppVersion=25.5.8809839.1
+AppVersion=25.6.8812776.2
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppPublisherURL}
 AppSupportURL={#MyAppSupportURL}
@@ -17,11 +17,12 @@ DisableWelcomePage=no
 DefaultDirName={tmp}
 DisableDirPage=yes
 DisableProgramGroupPage=yes
-Compression=lzma
+Compression=lzma2/ultra64
 SolidCompression=yes
 WizardStyle=modern
 Uninstallable=no
 SetupIconFile=assets\logo.ico
+VersionInfoDescription={#MyAppName}
 
 [Files]
 Source: "Localizations\zh\*"; DestDir: "{tmp}\mods\res_mods"; Flags: ignoreversion recursesubdirs createallsubdirs

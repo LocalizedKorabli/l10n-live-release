@@ -12,6 +12,8 @@ langs = ['en', 'es', 'zh', 'cht']
 
 iscc_path = r'C:\Program Files (x86)\Inno Setup 6\ISCC.exe'
 
+srchelios_path = r'D:\dev\wows\SrcHelios\SrcHelios\res_mods'
+
 forum_exclude_patterns = ['game_logo.svg', 'game_logo_alt.svg', 'game_logo_static.svg', 'game_logo_static_alt.svg', 'zzz_lk_ee_zjsj.mo', 'zzz_lk_ee_wws.mo']
 
 min_include_patterns = ['version.info', 'global.mo']
@@ -42,7 +44,6 @@ def _collect_lang(lang_name: str, l10n_path: Path, ee_path: Path, locale_config_
     shutil.rmtree(base_target_path)
     os.makedirs(base_target_path, exist_ok=True)
     os.makedirs(base_target_path.joinpath('texts').joinpath('ru').joinpath('LC_MESSAGES'), exist_ok=True)
-    os.makedirs(base_target_path.joinpath('bin64'), exist_ok=True)
     for file in os.listdir(l10n_path):
         if 'version.info' in file or 'global.mo' in file:
             shutil.copy(l10n_path.joinpath(file), base_target_path.joinpath('texts').joinpath('ru').joinpath('LC_MESSAGES').joinpath(file))
@@ -124,8 +125,16 @@ def pack_lang(lang_name: str) -> bool:
     os.rename('Output/mysetup.exe', f'Output/{installer_name_pattern[lang_name].replace("$l10n_version$", l10n_v).replace("$game_version$", game_v)}')
     return True
 
+def collect_shared():
+    print('正在收集共享文件…')
+    shared_dir = Path('Shared').joinpath('res_mods')
+    shutil.rmtree(shared_dir)
+    os.makedirs(shared_dir, exist_ok=True)
+    shutil.copytree(srchelios_path, shared_dir, dirs_exist_ok=True)
+
 
 if __name__ == '__main__':
+    collect_shared()
     os.makedirs('Releases', exist_ok=True)
     for file in os.listdir('Output'):
         os.remove(f'Output/{file}')

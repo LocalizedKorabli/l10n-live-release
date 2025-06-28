@@ -1,13 +1,13 @@
-Thank you for using English Localization mod by LocalizedKorabli.
+Gracias por utilizar el mod de localización al español de LocalizedKorabli.
 This is an offline installer for the localization mod mentioned above.
 
 Contents included:
-• An English localization pack for Mir Korabley;
-• An English game-loading logo;
+• A Spanish localization pack for Mir Korabley;
+• A game-loading logo;
 • UI optimization mods based on Unbound framework.
 
 Any suggestions about the program, please contact OpenKorabli by creating an issue on https://github.com/OpenKorabli/OpenL10nInstaller/issues.
-Any suggestions about the program, please contact us by creating an issue on https://github.com/LocalizedKorabli/Korabli-LESTA-I18N/issues.
+Any suggestions about the program, please contact us by creating an issue on https://github.com/LocalizedKorabli/Korabli-I18n-ES/issues.
 
 The setup will start once you click "Next".
 
