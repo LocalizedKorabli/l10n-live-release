@@ -29,7 +29,7 @@ VersionInfoProductName={#MyAppNameDefault}
 
 [Files]
 Source: "Localizations\es\*"; DestDir: "{tmp}\mods\res_mods"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "Shared\bin64"; DestDir: "{tmp}\mods\bin64"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "Shared\*"; DestDir: "{tmp}\mods"; Flags: ignoreversion recursesubdirs createallsubdirs
 // Spanish localization does not really need SrcHelios
 // Source: "Shared\*"; DestDir: "{tmp}\mods\"; Flags: ignoreversion recursesubdirs createallsubdirs
 
@@ -75,7 +75,7 @@ begin
       StringChange(s, '<id>', '');
       StringChange(s, '</id>', '');
       // 若要安装到PT端，将下一行的值改为——'WOWS.RPT.PRODUCTION'
-      if s = 'WOWS.RU.PRODUCTION' then
+      if s = 'MK.RU.PRODUCTION' then
       begin
         Result := True;
         Exit;
