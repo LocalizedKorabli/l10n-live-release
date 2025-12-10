@@ -8,7 +8,13 @@ from typing import List
 
 shall_not_delete: List[str] = []
 
-langs = ['en', 'es', 'zh', 'cht']
+langs = [
+    'en',
+    #'es',
+    'zh',
+    'cht',
+    'ja'
+]
 
 iscc_path = r'C:\Program Files (x86)\Inno Setup 6\ISCC.exe'
 
@@ -22,14 +28,16 @@ lang_base_paths = {
     'en': r'C:\Users\HoloI\Documents\dev\lesta\l10n\en-live',
     'es': r'C:\Users\HoloI\Documents\dev\lesta\l10n\es-live',
     'zh': r'C:\Users\HoloI\Documents\dev\lesta\l10n\zh-live',
-    'cht': r'C:\Users\HoloI\Documents\dev\lesta\l10n\cht-live'
+    'cht': r'C:\Users\HoloI\Documents\dev\lesta\l10n\cht-live',
+    'ja': r'C:\Users\HoloI\Documents\dev\lesta\l10n\ja-live'
 }
 
 installer_name_pattern = {
+    'en': 'LK-English-L10n-Offline-$game_version$-$l10n_version$.exe',
+    'es': 'LK-Español-Localización-$game_version$-$l10n_version$.exe',
     'zh': '澪刻汉化离线包-$game_version$-$l10n_version$.exe',
     'cht': '澪刻繁體中文化離綫包-$game_version$-$l10n_version$.exe',
-    'en': 'LK-English-L10n-Offline-$game_version$-$l10n_version$.exe',
-    'es': 'LK-Español-Localización-$game_version$-$l10n_version$.exe'
+    'ja': '澪刻・日本語化-$game_version$-$l10n_version$.exe'
 }
 
 def should_skip(path: Path, patterns: List[str]) -> bool:
