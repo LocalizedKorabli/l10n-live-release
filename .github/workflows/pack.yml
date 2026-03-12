@@ -30,3 +30,4 @@ jobs:
           name: ${{ matrix.artifact_name }}
           path: "Output/*${{ matrix.prefix }}*.exe"
           if-no-files-found: error
+          retention-days: 45
