@@ -20,9 +20,9 @@ iscc_path = r'C:\Program Files (x86)\Inno Setup 6\ISCC.exe'
 
 srchelios_path = r'C:\Users\HoloI\Documents\dev\lesta\ships\mods\SrcHelios\SrcHelios\res_mods'
 
-forum_exclude_patterns = ['game_logo.svg', 'game_logo_alt.svg', 'game_logo_static.svg', 'game_logo_static_alt.svg', 'zzz_lk_ee_zjsj.mo', 'zzz_lk_ee_wws.mo']
+forum_exclude_patterns = ['version.info', 'game_logo.svg', 'game_logo_alt.svg', 'game_logo_static.svg', 'game_logo_static_alt.svg', 'zzz_lk_ee_zjsj.mo', 'zzz_lk_ee_wws.mo']
 
-min_include_patterns = ['version.info', 'global.mo']
+min_include_patterns = ['global.mo', 'locale_config.xml']
 
 lang_base_paths = {
     'en': r'C:\Users\HoloI\Documents\dev\lesta\l10n\en-live',
@@ -94,7 +94,7 @@ def zip_lang(lang_name: str, zip_type: str) -> str:
                     print(f'已跳过文件：{child}')
                     continue
             print(f'已包含文件：{child}')
-            zf.write(child, child.name if is_min else child.relative_to(lang_path))
+            zf.write(child, child.relative_to(lang_path))
     shall_not_delete.append(dst_zip)
     return dst_zip
 
