@@ -7,17 +7,17 @@ on:
 
 jobs:
   deploy-l10n:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         include:
-          - prefix: "[EN]"
+          - prefix: "EN"
             artifact_name: "l10n-en"
-          - prefix: "[CHS]"
+          - prefix: "CHS"
             artifact_name: "l10n-chs"
-          - prefix: "[CHT]"
+          - prefix: "CHT"
             artifact_name: "l10n-cht"
-          - prefix: "[JA]"
+          - prefix: "JA"
             artifact_name: "l10n-ja"
 
     steps:
@@ -28,5 +28,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact_name }}
-          path: "Output/${{ matrix.prefix }}*.exe"
+          path: "Output/*${{ matrix.prefix }}*.exe"
           if-no-files-found: error
