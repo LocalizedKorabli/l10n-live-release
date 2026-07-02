@@ -10,7 +10,8 @@ shall_not_delete: List[str] = []
 
 langs = [
     'en',
-    #'es',
+    'de',
+    'es',
     'zh',
     'cht',
     'ja'
@@ -26,6 +27,7 @@ min_include_patterns = ['global.mo', 'locale_config.xml']
 
 lang_base_paths = {
     'en': r'C:\Users\HoloI\Documents\dev\lesta\l10n\en-live',
+    'de': r'C:\Users\HoloI\Documents\dev\lesta\l10n\de-live',
     'es': r'C:\Users\HoloI\Documents\dev\lesta\l10n\es-live',
     'zh': r'C:\Users\HoloI\Documents\dev\lesta\l10n\zh-live',
     'cht': r'C:\Users\HoloI\Documents\dev\lesta\l10n\cht-live',
@@ -33,11 +35,12 @@ lang_base_paths = {
 }
 
 installer_name_pattern = {
-    'en': '[EN]LK-English-L10n-Offline-$game_version$-$l10n_version$.exe',
-    'es': '[ES]LK-Español-Localización-$game_version$-$l10n_version$.exe',
-    'zh': '[CHS]澪刻汉化离线包-$game_version$-$l10n_version$.exe',
-    'cht': '[CHT]澪刻繁體中文化離綫包-$game_version$-$l10n_version$.exe',
-    'ja': '[JA]澪刻・日本語化-$game_version$-$l10n_version$.exe'
+    'en': '[EN]LK-English-L10n-Live-$game_version$-$l10n_version$.exe',
+    'de': '[DE]LK-Deutsch-L10n-Live-$game_version$-$l10n_version$.exe',
+    'es': '[ES]LK-Español-Localización-Live-$game_version$-$l10n_version$.exe',
+    'zh': '[CHS]澪刻汉化离线包-正式服$game_version$-$l10n_version$.exe',
+    'cht': '[CHT]澪刻繁體中文化離綫包-正式服$game_version$-$l10n_version$.exe',
+    'ja': '[JA]澪刻・日本語化-Live-$game_version$-$l10n_version$.exe'
 }
 
 def should_skip(path: Path, patterns: List[str]) -> bool:

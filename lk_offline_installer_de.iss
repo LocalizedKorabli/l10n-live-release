@@ -1,5 +1,5 @@
-#define MyAppInstallerName "LKSpanishL10nPack"
-#define MyAppNameDefault "LK Español Localización (Live)"
+#define MyAppInstallerName "LKDeutschL10nPack"
+#define MyAppNameDefault "LK Deutsches Lokalisierungs-Offline-Paket"
 #define MyAppVersion "1.0.0"
 #define MyAppPublisher "LocalizedKorabli"
 #define MyAppPublisherURL "https://github.com/LocalizedKorabli"
@@ -28,19 +28,22 @@ VersionInfoDescription={#MyAppNameDefault}
 VersionInfoProductName={#MyAppNameDefault}
 
 [Files]
-Source: "Localizations\es\*"; DestDir: "{tmp}\mods\res_mods"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "Localizations\de\*"; DestDir: "{tmp}\mods\res_mods"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "Shared\*"; DestDir: "{tmp}\mods"; Flags: ignoreversion recursesubdirs createallsubdirs
+// English localization does not really need SrcHelios
+// Source: "Shared\*"; DestDir: "{tmp}\mods\"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Languages]
-Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"; InfoBeforeFile: "assets\welcome_es.txt"; LicenseFile: "assets\license_es.txt";
+Name: "de"; MessagesFile: "compiler:Languages\German.isl"; InfoBeforeFile: "assets\welcome_de.txt"; LicenseFile: "assets\license_de.txt";
+//Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"; InfoBeforeFile: "assets\welcome_ru.txt"; LicenseFile: "assets\license_ru.txt";
 
 [CustomMessages]
-es.MyAppName=LK Español Localización
-es.ErrorColon=Error:
-es.InvalidPreferencesError=No se pudo analizar %1.%nAsegúrate de tener GameCenter correctamente instalado.
-es.InstalledToDirsBelow=Paquetes de localización instalados en los siguientes directorios:%n%1
-es.BuildDirsNotFound=Aunque se detectó la ruta del juego, no se encontró ninguna carpeta de versión disponible.%nComprueba la integridad del juego.
-es.ContactUsForHelp=Si no puedes resolver los problemas por tu cuenta, pide ayuda en nuestro servidor de Discord: https://discord.gg/3d9k2mkWy4
+de.MyAppName=LK Deutsches Lokalisierungs-Offline-Paket
+de.ErrorColon=Fehler:
+de.InvalidPreferencesError=Konnte %1 nicht einlesen.%nBitte stellen Sie sicher, dass das GameCenter ordnungsgemäß installiert ist.
+de.InstalledToDirsBelow=Lokalisierungspakete werden in folgende Verzeichnisse installiert:%n%1
+de.BuildDirsNotFound=Der Spielpfad wurde erkannt, es konnte jedoch kein Versionsordner gefunden werden.%nBitte überprüfen Sie die Spieldateien.
+de.ContactUsForHelp=Falls Sie das Problem nicht selbst lösen können, holen Sie sich Hilfe auf unserem Discord-Server: https://discord.gg/3d9k2mkWy4
 
 [Code]
 function GetInstallRootFromRegistry(): String;

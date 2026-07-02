@@ -1,4 +1,4 @@
-Korabli-I18n-ES (Localización en español para Mir Korabley de LocalizedKorabli):
+Korabli-I18n-DE (LK Deutsche Lokalisierung für Mir Korabley):
 
 © 2026 LocalizedKorabli
 
